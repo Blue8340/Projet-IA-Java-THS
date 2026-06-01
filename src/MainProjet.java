@@ -63,9 +63,15 @@ public class MainProjet {
         // 3. APPRENTISSAGE
         // ========================================================
         System.out.println("Début de l'entraînement...");
-        iNeurone neurone = new NeuroneSigmoide(tailleReference);
+        iNeurone neurone = new NeuroneHeavyside(tailleReference);
+        // SCÉNARIO A : Lancer l'entraînement (si on a de nouvelles données)
         Neurone.fixeCoefApprentissage(0.001f); 
         neurone.apprentissage(entreesTrain, resultatsTrain, 0.05f);
+        System.out.println("Apprentissage terminé !");
+        neurone.sauvegarde("neurone_chat_chien.txt");
+
+        // SCÉNARIO B : Charger une IA existante (Instantané !)
+        //neurone.chargement("neurone_chat_chien.txt");
 
         // ========================================================
         // 4. TEST SUR DONNÉES INCONNUES
