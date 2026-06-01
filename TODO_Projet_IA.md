@@ -60,13 +60,13 @@ Référez-vous à ces codes pour les dépendances et dans vos commits (ex : `git
 ## Phase 3 — Niveau 2 : brique données / images
 *Cœur technique. Indépendant des Phases 1 et 2 → tourne en parallèle. C'est le plus gros morceau de code → 1 à 2 pers.*
 
-- [ ] **N3.1** — 🚧 Étudier `Image.java` : comprendre que `donnees()` renvoie déjà l'image **aplatie en 1D** (= l'entrée directe d'un neurone) et que la conversion niveaux de gris est faite — 👥 **1 pers** · ⚡
-- [ ] **N3.2** — Écrire la fonction qui **parcourt les dossiers** `train/` et crée la liste des `Image` (réutiliser `Image.listeFichiers`) — 👥 **1-2 pers** · 🔗 dép: N3.1 · 🚧
-- [ ] **N3.3** — **Labelliser** chaque image selon le nom du dossier (`cat` → actif=1, sinon → 0) — 👥 **1 pers** · 🔗 dép: N3.2
-- [ ] **N3.4** — **Normaliser** les amplitudes des pixels (ramener `[0..255]` → `[0..1]`, ou centrer-réduire) — 👥 **1 pers** · 🔗 dép: N3.3 · 🚧
-- [ ] **N3.5** — **Mélanger** (shuffle) les données d'entraînement (attention à mélanger entrées **et** labels ensemble) — 👥 **1 pers** · 🔗 dép: N3.4
-- [ ] **N3.6** — Construire les structures finales `float[][] entrees` + `float[] resultats` attendues par `apprentissage()` — 👥 **1 pers** · 🔗 dép: N3.5 · 🚧
-- [ ] **N3.7** — Vérifier que **toutes les images ont la même dimension** (le neurone a un nombre de synapses fixe). Si non → prévoir un redimensionnement / filtrage — 👥 **1 pers** · 🔗 dép: N3.2
+- [x] **N3.1** — 🚧 Étudier `Image.java` : comprendre que `donnees()` renvoie déjà l'image **aplatie en 1D** (= l'entrée directe d'un neurone) et que la conversion niveaux de gris est faite — 👥 **1 pers** · ⚡
+- [x] **N3.2** — Écrire la fonction qui **parcourt les dossiers** `train/` et crée la liste des `Image` (réutiliser `Image.listeFichiers`) — 👥 **1-2 pers** · 🔗 dép: N3.1 · 🚧
+- [x] **N3.3** — **Labelliser** chaque image selon le nom du dossier (`cat` → actif=1, sinon → 0) — 👥 **1 pers** · 🔗 dép: N3.2
+- [x] **N3.4** — **Normaliser** les amplitudes des pixels (ramener `[0..255]` → `[0..1]`, ou centrer-réduire) — 👥 **1 pers** · 🔗 dép: N3.3 · 🚧
+- [x] **N3.5** — **Mélanger** (shuffle) les données d'entraînement (attention à mélanger entrées **et** labels ensemble) — 👥 **1 pers** · 🔗 dép: N3.4
+- [x] **N3.6** — Construire les structures finales `float[][] entrees` + `float[] resultats` attendues par `apprentissage()` — 👥 **1 pers** · 🔗 dép: N3.5 · 🚧
+- [x] **N3.7** — Vérifier que **toutes les images ont la même dimension** (le neurone a un nombre de synapses fixe). Si non → prévoir un redimensionnement / filtrage — 👥 **1 pers** · 🔗 dép: N3.2
 
 > ⚠️ **N3.7 est un piège classique** : si les images n'ont pas toutes la même taille, le `float[]` d'entrée change de longueur et le neurone plante. À vérifier tôt.
 
@@ -75,7 +75,7 @@ Référez-vous à ces codes pour les dépendances et dans vos commits (ex : `git
 ## Phase 4 — Niveau 2 : assemblage de la chaîne complète 🚧
 *Le `main` qui relie tout. Dépend des Phases 2 et 3 → c'est le point de convergence du groupe.*
 
-- [ ] **N4.1** — Écrire le `main` orchestrateur : train → label → normalise → mélange → entraîne — 👥 **1 pers** · 🔗 dép: N2.1 (ou Heaviside), N2.4, N3.6 · 🚧
+- [x] **N4.1** — Écrire le `main` orchestrateur : train → label → normalise → mélange → entraîne — 👥 **1 pers** · 🔗 dép: N2.1 (ou Heaviside), N2.4, N3.6 · 🚧
 - [ ] **N4.2** — **Entraîner** le neurone sur les données `train` (actif = chat) — 👥 **1 pers** · 🔗 dép: N4.1 · 🚧
 - [ ] **N4.3** — Charger les données de **test**, les labelliser et normaliser de la **même façon** que le train — 👥 **1 pers** · 🔗 dép: N3.4
 - [ ] **N4.4** — Appliquer le neurone entraîné sur le test (`metAJour` + lecture `sortie()` avec seuil) — 👥 **1 pers** · 🔗 dép: N4.2, N4.3 · 🚧
