@@ -11,16 +11,16 @@ public class Image
 	static private int LabelChien = 1;
 	static private int LabelWild = 2;
 	static private int LabelInconnu = 3;
-	private int label = -1;
+	private float label = -1;
 	private int largeur = 0;
 	private int hauteur = 0;
-	private int[] donnees = null; // image applatie en concaténant les lignes les unes après les autres
+	private float[] donnees = null; // image applatie en concaténant les lignes les unes après les autres
 
-	public int label() {return label;}
+	public float label() {return label;}
 	public int largeur() {return largeur;}
 	public int hauteur() {return hauteur;}
 	public int taille() {return donnees.length;} // nombre de pixels: hauteur*largeur ou 3*hauteur*largeur pour une image RGB
-	public int[] donnees() {return donnees;}
+	public float[] donnees() {return donnees;}
 
 	public boolean estEnNiveauxDeGris() {return taille() == largeur() * hauteur();}
 
@@ -30,14 +30,14 @@ public class Image
 			type, label(), largeur(), hauteur(), taille());
 	}
 
-	public Image(final String cheminImage, int label, boolean niveauxDeGris) {
+	public Image(final String cheminImage, float label, boolean niveauxDeGris) {
 		try {
 			final BufferedImage img = ImageIO.read(new File(cheminImage));
-			this.label = label;
+			this.label = (int) label;
 			largeur = img.getWidth(null);
 			hauteur = img.getHeight(null);
 			final int taille = niveauxDeGris ? hauteur*largeur : 3*hauteur*largeur;
-			donnees = new int[taille];
+			donnees = new float[taille];
 			for (int i = 0; i < hauteur; ++i) {
 				for (int j = 0; j < largeur; ++j) {
 					final long rgb = img.getRGB(j, i);
@@ -63,6 +63,38 @@ public class Image
 		}
 	}
 
+	public static float[] Labelliser(List <String> cheminsFichiers) {
+		float[] labels = new float[cheminsFichiers.size()];
+		for (int i = 0; i < cheminsFichiers.size(); i++) {
+			String chemin = cheminsFichiers.get(i);
+			labels[i] = chemin.indexOf("cat") != -1 ? LabelChat : 
+					   chemin.indexOf("dog") != -1 ? LabelChien : 
+					   chemin.indexOf("wild") != -1 ? LabelWild : LabelInconnu;
+		}
+		return labels;
+	}
+
+	public static void Normaliser(float[] donnees) {
+		for (int i = 0; i < donnees.length; i++) {
+			donnees[i]/= 255.0f;
+		}
+	}
+
+	public static void Mélanger(List<String> chemingsFichiers, float[] labels){
+		Random rand=new Random();
+		for (int i = 0; i < chemingsFichiers.size(); i++) {
+			int j = rand.nextInt(chemingsFichiers.size());
+			
+			String tempChemin = chemingsFichiers.get(i);
+			chemingsFichiers.set(i, chemingsFichiers.get(j));
+			chemingsFichiers.set(j, tempChemin);
+
+			float tempLabel = labels[i];
+			labels[i] = labels[j];
+			labels[j] = tempLabel;
+		}
+	}
+
 	public static List<String> listeFichiers(String repertoire) {
 		List<String> cheminsFichiers = null;
 		try {
@@ -80,16 +112,36 @@ public class Image
 
 	public static void main (String[] args)
 	{
-		List<String> cheminsFichiers = listeFichiers("dataset_animaux/");
-		for (String chemin : cheminsFichiers) {
-			System.out.println(chemin);
+		String chemin ="C:\\Users\\yahya\\Desktop\\Projet JAVA THS\\Projet-IA-Java-THS\\dataset_groupe_8\\train";
+		List<String> cheminsFichiers = listeFichiers(chemin);
+		float[] Resultats = Labelliser(cheminsFichiers);
+		Mélanger(cheminsFichiers, Resultats);
+		float[][] Entrées =new float[cheminsFichiers.size()][];
+		for (int i=0;i<cheminsFichiers.size();i++){
+			Entrées[i]=new Image(cheminsFichiers.get(i), Resultats[i], true).donnees();
+			Normaliser(Entrées[i]);
+			System.out.println(cheminsFichiers.get(i));
 		}
+		float MSElimite = 0.001f;
+		final iNeurone n = new NeuroneHeavyside(Entrées[0].length);
+		n.apprentissage(Entrées, Resultats, MSElimite);
 
-		final String chemin = "dataset_animaux/train/dog/010552.jpg";
-		final int labelImage = chemin.indexOf("dog") != -1 ? LabelChien : LabelInconnu;
-		Image im1 = new Image(chemin, labelImage, false);
-		Image im2 = new Image(chemin, labelImage, true);
-		im1.afficheMetadonnees();
-		im2.afficheMetadonnees();
+		final Neurone vueNeurone = (Neurone)n;
+		System.out.print("Synapses : ");
+		for (final float f : vueNeurone.synapses())
+			System.out.print(f+" ");
+		System.out.print("\nBiais : ");
+		System.out.println(vueNeurone.biais());
+		
+		// On affiche chaque cas appris
+		for (int i = 0; i < Entrées.length; ++i)
+		{
+			// Pour une entrée donnée
+			final float[] entree = Entrées[i];
+			// On met à jour la sortie du neurone
+			n.metAJour(entree);
+			// On affiche cette sortie
+			System.out.println("Entree "+i+" : "+n.sortie());
+		}
 	}
 }
