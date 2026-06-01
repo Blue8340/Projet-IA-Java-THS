@@ -122,7 +122,7 @@ public class Image
 			Normaliser(Entrées[i]);
 			System.out.println(cheminsFichiers.get(i));
 		}
-		float MSElimite = 0.001f;
+		float MSElimite = 0.250f;
 		final iNeurone n = new NeuroneHeavyside(Entrées[0].length);
 		n.apprentissage(Entrées, Resultats, MSElimite);
 
@@ -133,6 +133,10 @@ public class Image
 		System.out.print("\nBiais : ");
 		System.out.println(vueNeurone.biais());
 		
+
+		int correct = 0;
+		int fauxPositifs = 0;
+		int fauxNegatifs = 0;
 		// On affiche chaque cas appris
 		for (int i = 0; i < Entrées.length; ++i)
 		{
@@ -141,7 +145,47 @@ public class Image
 			// On met à jour la sortie du neurone
 			n.metAJour(entree);
 			// On affiche cette sortie
-			System.out.println("Entree "+i+" : "+n.sortie());
+			System.out.println("Entree "+i+" : "+"Estimé "+ n.sortie()+" / Réel "+Resultats[i]);
+			if (n.sortie() == Resultats[i]) {
+				correct++;
+			} else if (n.sortie() == 1.0f && Resultats[i] == 0.0f) {
+				fauxPositifs++;
+			} else if (n.sortie() == 0.0f && Resultats[i] == 1.0f) {
+				fauxNegatifs++;
+			}
 		}
+		System.out.println("Précision : " + (float) correct / Entrées.length);
+		System.out.println("Faux positifs : " + fauxPositifs);
+		System.out.println("Faux négatifs : " + fauxNegatifs);
+
+		//On test sur des données non vues
+		String cheminTest ="C:\\Users\\yahya\\Desktop\\Projet JAVA THS\\Projet-IA-Java-THS\\dataset_groupe_8\\test";
+		List<String> cheminsFichiersTest = listeFichiers(cheminTest);
+		float[] ResultatsTest = Labelliser(cheminsFichiersTest);
+		float[][] EntréesTest =new float[cheminsFichiersTest.size()][];
+		for (int i=0;i<cheminsFichiersTest.size();i++){
+			EntréesTest[i]=new Image(cheminsFichiersTest.get(i), ResultatsTest[i], true).donnees();
+			Normaliser(EntréesTest[i]);
+			System.out.println(cheminsFichiersTest.get(i));
+		}
+		int correctTest = 0;
+		int fauxPositifsTest = 0;
+		int fauxNegatifsTest = 0;
+		for (int i = 0; i < EntréesTest.length; ++i)
+		{
+			final float[] entree = EntréesTest[i];
+			n.metAJour(entree);
+			System.out.println("Entree "+i+" : "+"Estimé "+ n.sortie()+" / Réel "+ResultatsTest[i]);
+			if (n.sortie() == ResultatsTest[i]) {
+				correctTest++;
+			} else if (n.sortie() == 1.0f && ResultatsTest[i] == 0.0f) {
+				fauxPositifsTest++;
+			} else if (n.sortie() == 0.0f && ResultatsTest[i] == 1.0f) {
+				fauxNegatifsTest++;
+			}
+		}
+		System.out.println("Précision sur les données de test : " + (float) correctTest / EntréesTest.length);
+		System.out.println("Faux positifs sur les données de test : " + fauxPositifsTest);
+		System.out.println("Faux négatifs sur les données de test : " + fauxNegatifsTest);
 	}
 }
