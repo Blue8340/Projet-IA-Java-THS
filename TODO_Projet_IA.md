@@ -50,8 +50,8 @@ Référez-vous à ces codes pour les dépendances et dans vos commits (ex : `git
 
 - [x] **N2.1** — Créer la classe `NeuroneSigmoide extends Neurone` (activation = sigmoïde `1/(1+e^-x)`) — 👥 **1 pers** · 🔗 dép: N1.1 · ⚡
 - [ ] **N2.2** — Créer la classe `NeuroneReLU extends Neurone` (activation = `max(0, x)`) — 👥 **1 pers** · 🔗 dép: N1.1 · ⚡
-- [ ] **N2.3** — 🧪 Tester ET/OU avec Sigmoïde puis ReLU (décommenter les lignes prévues dans `testNeurone`) et comparer le comportement à Heaviside — 👥 **1 pers** · 🔗 dép: N2.1, N2.2
-- [ ] **N2.4** — ⚠️ **Gérer le risque de boucle infinie** : la condition `while (mse > MSElimite)` peut ne jamais finir (problème non linéairement séparable, ReLU/sigmoïde qui ne converge pas). Ajouter un **nombre max d'itérations** via une sous-classe ou une surcharge (sans modifier `Neurone.java` directement) — 👥 **1 pers** · 🔗 dép: N1.1 · 🚧
+- [x] **N2.3** — 🧪 Tester ET/OU avec Sigmoïde puis ReLU (décommenter les lignes prévues dans `testNeurone`) et comparer le comportement à Heaviside — 👥 **1 pers** · 🔗 dép: N2.1, N2.2
+- [x] **N2.4** — ⚠️ **Gérer le risque de boucle infinie** : la condition `while (mse > MSElimite)` peut ne jamais finir (problème non linéairement séparable, ReLU/sigmoïde qui ne converge pas). Ajouter un **nombre max d'itérations** via une sous-classe ou une surcharge (sans modifier `Neurone.java` directement) — 👥 **1 pers** · 🔗 dép: N1.1 · 🚧
 
 > 💡 **N2.4 est important** : sans garde-fou, l'apprentissage sur les vraies images (Phase 4) risque de tourner à l'infini. À traiter avant la Phase 4.
 
