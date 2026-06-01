@@ -3,7 +3,7 @@ public interface iNeurone
 	// Calcule la valeur de sortie en fonction des entrées, des poids synaptiques,
 	// du biais et de la fonction d'activation
 	public void metAJour(final float[] entrees);
-	
+
 	// Accesseur pour la valeur de sortie/d'activation du neurone
 	public float sortie();
 
