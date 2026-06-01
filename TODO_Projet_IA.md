@@ -38,8 +38,8 @@ Référez-vous à ces codes pour les dépendances et dans vos commits (ex : `git
 ## Phase 1 — Niveau 1 : maîtrise de l'objet neurone
 *Le sujet l'exige explicitement. Indépendant du reste → peut tourner en parallèle de la Phase 3.*
 
-- [ ] **N1.1** — 🚧 Comprendre et **commenter ligne par ligne** l'algorithme d'apprentissage (`apprentissage()` dans `Neurone.java`, non commenté) : règle de mise à jour des poids, rôle de `eta`, du `delta`, du biais, condition d'arrêt — 👥 **1 pers** · ⚡
-- [ ] **N1.2** — 🧪 Lancer `testNeurone` sur la fonction **ET** (déjà codé) et **OU** : vérifier que ça apprend correctement — 👥 **1 pers** · 🔗 dép: N0.3 · ⚡
+- [x] **N1.1** — 🚧 Comprendre et **commenter ligne par ligne** l'algorithme d'apprentissage (`apprentissage()` dans `Neurone.java`, non commenté) : règle de mise à jour des poids, rôle de `eta`, du `delta`, du biais, condition d'arrêt — 👥 **1 pers** · ⚡
+- [x] **N1.2** — 🧪 Lancer `testNeurone` sur la fonction **ET** (déjà codé) et **OU** : vérifier que ça apprend correctement — 👥 **1 pers** · 🔗 dép: N0.3 · ⚡
 - [ ] **N1.3** — 🧪 Lancer l'apprentissage **plusieurs fois** (ex : 20–50 runs) et collecter les valeurs finales des poids + biais — 👥 **1 pers** · 🔗 dép: N1.2
 - [ ] **N1.4** — 🧪 Analyser : les poids trouvés sont-ils similaires d'un run à l'autre ? **Justifier** (init aléatoire, solutions multiples, séparabilité linéaire) — 👥 **1 pers** · 🔗 dép: N1.3
 
