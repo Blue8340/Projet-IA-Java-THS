@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ab1a47ca-a76a-4965-a391-4a622c5e79a4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Projet-Java-IA-THS/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet-Java-IA-THS/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet-Java-IA-THS/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet-Java-IA-THS/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet-Java-IA-THS/Projet-Java-IA-THS.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projet-IA-Java-THS/Image.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projet-IA-Java-THS/Image.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projet-IA-Java-THS/Neurone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projet-IA-Java-THS/Neurone.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projet-IA-Java-THS/NeuroneHeavyside.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projet-IA-Java-THS/NeuroneHeavyside.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projet-IA-Java-THS/iNeurone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projet-IA-Java-THS/iNeurone.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projet-IA-Java-THS/neurone/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projet-IA-Java-THS/neurone/Tests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projet-IA-Java-THS/testNeurone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projet-IA-Java-THS/testNeurone.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/Support/src/Image.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainProjet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Support/neurone/MainProjet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Neurone.java" beforeDir="false" afterPath="$PROJECT_DIR$/Support/src/Neurone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NeuroneHeavyside.java" beforeDir="false" afterPath="$PROJECT_DIR$/Support/src/NeuroneHeavyside.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NeuroneReLU.java" beforeDir="false" afterPath="$PROJECT_DIR$/Support/src/NeuroneReLU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NeuroneSigmoide.java" beforeDir="false" afterPath="$PROJECT_DIR$/Support/src/NeuroneSigmoide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/iNeurone.java" beforeDir="false" afterPath="$PROJECT_DIR$/Support/src/iNeurone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testNeurone.java" beforeDir="false" afterPath="$PROJECT_DIR$/Support/src/testNeurone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yanis main" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "AnFyx"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Blue8340/Projet-IA-Java-THS.git",
+    "accountId": "301cd48b-0996-48cb-967c-ea0ddfda8b50"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="3EXPL8ClZ4moSZaEfyZ3P8Exwik" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.MainProjet.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Thomas",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/tomin/Documents/02_Supperieur/03_ISEN_3/Projet-IA-Java-THS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tomin\Documents\02_Supperieur\03_ISEN_3\Projet-IA-Java-THS\Support" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ab1a47ca-a76a-4965-a391-4a622c5e79a4" name="Changes" comment="" />
+      <created>1780321882348</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1780321882348</updated>
+      <workItem from="1780321883706" duration="1335000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

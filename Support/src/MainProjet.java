@@ -1,3 +1,5 @@
+package src;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -63,8 +65,10 @@ public class MainProjet {
         // 3. APPRENTISSAGE
         // ========================================================
         System.out.println("Début de l'entraînement...");
-        iNeurone neurone = new NeuroneSigmoide(tailleReference);
-        Neurone.fixeCoefApprentissage(0.001f); 
+        //iNeurone neurone = new NeuroneSigmoide(tailleReference);
+        //iNeurone neurone = new NeuroneHeavyside(tailleReference);
+        iNeurone neurone = new NeuroneReLU(tailleReference);
+        Neurone.fixeCoefApprentissage(0.001f);
         neurone.apprentissage(entreesTrain, resultatsTrain, 0.05f);
 
         // ========================================================

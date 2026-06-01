@@ -1,4 +1,6 @@
-public class NeuroneSigmoide extends Neurone 
+package src;
+
+public class NeuroneSigmoide extends Neurone
 {
 	// Constructeur
 	public NeuroneSigmoide(final int nbEntrees) {
