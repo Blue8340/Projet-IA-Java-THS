@@ -111,7 +111,7 @@ Référez-vous à ces codes pour les dépendances et dans vos commits (ex : `git
 - [x] **E4** — 🧪 Faire varier les **paramètres du neurone** (`eta`, `MSElimite`, nb d'itérations) et tracer l'effet sur la convergence/précision — 👥 **1 pers** · 🔗 dép: N4.5 · ⚡
 
 ## Priorité moyenne — démarche scientifique « signal »
-- [ ] **E5** — 🧪 Robustesse au **bruit** sur ET/OU : ajouter un bruit d'amplitude contrôlée aux entrées, mesurer la dégradation, introduire la notion de **rapport signal/bruit** — 👥 **1 pers** · 🔗 dép: N1.2 · ⚡
+- [x] **E5** — 🧪 Robustesse au **bruit** sur ET/OU : ajouter un bruit d'amplitude contrôlée aux entrées, mesurer la dégradation, introduire la notion de **rapport signal/bruit** — 👥 **1 pers** · 🔗 dép: N1.2 · ⚡
 - [x] **E6** — Traiter les images en **couleur RGB** au lieu des niveaux de gris (`Image` le permet déjà) et comparer — 👥 **1 pers** · 🔗 dép: N4.5
 - [ ] **E7** — Traiter en **couleur TSL/HSL** au lieu de RGB et comparer — 👥 **1 pers** · 🔗 dép: E6
 
