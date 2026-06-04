@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d414a26e-e512-444b-8748-dabe4187151c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Projet-IA-Java-THS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Projet-IA-Java-THS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projet-IA-Java-THS/NeuroneHeavyside.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projet-IA-Java-THS/NeuroneHeavyside.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projet-IA-Java-THS/neurone/Tests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projet-IA-Java-THS/testNeurone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projet-IA-Java-THS/testNeurone.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NeuroneHeavyside.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NeuroneHeavyside.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NeuroneReLU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NeuroneReLU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NeuroneSigmoide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NeuroneSigmoide.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Nino" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Blue8340&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Blue8340/Projet-IA-Java-THS.git&quot;,
+    &quot;accountId&quot;: &quot;8a6ef3d8-72ce-4a91-9985-67ad54f1304e&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="3EWmyXzy5egugQi88Fe9TiNn3cB" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.MainProjet.executor": "Run",
+    "Application.Tests.executor": "Run",
+    "Application.testNeurone.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "newmain",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/nino/GitHub/Projet-IA-Java-THS",
+    "onboarding.tips.debug.path": "/home/nino/GitHub/Projet-IA-Java-THS/src/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="MainProjet" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="MainProjet" />
+      <module name="Projet-IA-Java-THS" />
+      <option name="VM_PARAMETERS" value="-Xmx4G" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.138" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d414a26e-e512-444b-8748-dabe4187151c" name="Changes" comment="" />
+      <created>1780302956049</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1780302956049</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
