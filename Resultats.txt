@@ -1,0 +1,312 @@
+ReLu
+
+eta : 0.1 -> Itération 958, mse:  0,518712, mse n'arrive pas à descendre en dessous de cette valeur
+
+eta : 0.05 -> Itération 958, mse:  0,518712, mse n'arrive pas à descendre en dessous de cette valeur
+
+eta : 0.01 -> Itération 579, mse:  9,581141 mse est aléatoire entre 9,5 et 11,5
+
+eta : 0.001 -> Itération infinie
+
+eta : 0.001, mselimite : 0.1 -> Itération 2095, mse:  0,099992 ; Résultat : 1386/2161 (64,14% de précision)
+
+eta : 0.001, mselimite : 0.08 -> Itération 12959, mse:  0,079999 ; Résultat : 1421/2161 (65,76% de précision)
+
+sans shuffle, parametre de base : Itération 466, mse:  0,049954 ; Résultat : 1041/2161 (48,17% de précision)
+
+sans shuffle, sans normalisation, parametre de base : Itération 199, mse:  0,518712
+
+sans normalisation, parametre de base : IDEM
+
+RGB OFF, eta : 0.001, mselimite : 0.1 -> Itération 277, mse:  0,908523
+Itération 278, mse:  0,921237
+Itération 279, mse:  0,950313
+Itération 280, mse:  0,982399
+Itération 281, mse:  0,953045
+Itération 282, mse:  0,920216
+Itération 283, mse:  0,951705
+Itération 284, mse:  0,968943
+
+Wild included -> Itération 717, mse:  0,559478
+Itération 718, mse:  0,559432
+Itération 719, mse:  0,559386
+Itération 720, mse:  0,559341
+Itération 721, mse:  0,559295 ; converge ridiculement lentement, impossible d'atteindre mse limit
+
+
+Wild included, mse 0.056 -> Itération 539, mse:  0,559973 ; Résultat : 1327/2161 (61,41% de précision)
+
+
+
+
+
+200 itérations :
+=== VÉRIFICATION SUR LES DONNÉES D'ENTRAÎNEMENT (Train) ===
+RÉSULTAT GLOBAL : 9004/10000 (90,04% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 2726
+- Classés comme CHATS  : 3419
+- Classés comme WILD   : 3855
+---------------------------------------------------
+
+=== VRAI TEST SUR DONNÉES INCONNUES (Test) ===
+RÉSULTAT GLOBAL : 2353/3200 (73,53% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 878
+- Classés comme CHATS  : 1163
+- Classés comme WILD   : 1159
+---------------------------------------------------
+
+
+
+600 itérations :
+
+=== VÉRIFICATION SUR LES DONNÉES D'ENTRAÎNEMENT (Train) ===
+RÉSULTAT GLOBAL : 9265/10000 (92,65% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 3367
+- Classés comme CHATS  : 3049
+- Classés comme WILD   : 3584
+---------------------------------------------------
+
+=== VRAI TEST SUR DONNÉES INCONNUES (Test) ===
+RÉSULTAT GLOBAL : 2312/3200 (72,25% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 1172
+- Classés comme CHATS  : 990
+- Classés comme WILD   : 1038
+---------------------------------------------------
+
+
+1200 itérations : 
+=== VÉRIFICATION SUR LES DONNÉES D'ENTRAÎNEMENT (Train) ===
+RÉSULTAT GLOBAL : 9329/10000 (93,29% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 3430
+- Classés comme CHATS  : 3791
+- Classés comme WILD   : 2779
+---------------------------------------------------
+
+=== VRAI TEST SUR DONNÉES INCONNUES (Test) ===
+RÉSULTAT GLOBAL : 2224/3200 (69,50% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 1191
+- Classés comme CHATS  : 1323
+- Classés comme WILD   : 686
+---------------------------------------------------
+
+
+1600 itérations :
+Apprentissage des 3 neurones terminé !
+
+=== VÉRIFICATION SUR LES DONNÉES D'ENTRAÎNEMENT (Train) ===
+RÉSULTAT GLOBAL : 9753/10000 (97,53% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 3080
+- Classés comme CHATS  : 3519
+- Classés comme WILD   : 3401
+---------------------------------------------------
+
+=== VRAI TEST SUR DONNÉES INCONNUES (Test) ===
+RÉSULTAT GLOBAL : 2262/3200 (70,69% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 1065
+- Classés comme CHATS  : 1194
+- Classés comme WILD   : 941
+---------------------------------------------------
+
+
+TSL 200 itérations :
+
+=== VÉRIFICATION SUR LES DONNÉES D'ENTRAÎNEMENT (Train) ===
+RÉSULTAT GLOBAL : 9833/10000 (98,33% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 3384
+- Classés comme CHATS  : 3338
+- Classés comme WILD   : 3278
+---------------------------------------------------
+
+=== VRAI TEST SUR DONNÉES INCONNUES (Test) ===
+RÉSULTAT GLOBAL : 2255/3200 (70,47% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 1330
+- Classés comme CHATS  : 958
+- Classés comme WILD   : 912
+---------------------------------------------------
+
+TSL 600 itérations :
+
+
+=== VÉRIFICATION SUR LES DONNÉES D'ENTRAÎNEMENT (Train) ===
+RÉSULTAT GLOBAL : 10000/10000 (100,00% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 3228
+- Classés comme CHATS  : 3479
+- Classés comme WILD   : 3293
+---------------------------------------------------
+
+=== VRAI TEST SUR DONNÉES INCONNUES (Test) ===
+RÉSULTAT GLOBAL : 2299/3200 (71,84% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 1028
+- Classés comme CHATS  : 1159
+- Classés comme WILD   : 1013
+---------------------------------------------------
+
+
+TSL 1200 itérations :
+
+
+=== VÉRIFICATION SUR LES DONNÉES D'ENTRAÎNEMENT (Train) ===
+RÉSULTAT GLOBAL : 10000/10000 (100,00% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 3228
+- Classés comme CHATS  : 3479
+- Classés comme WILD   : 3293
+---------------------------------------------------
+
+=== VRAI TEST SUR DONNÉES INCONNUES (Test) ===
+RÉSULTAT GLOBAL : 2279/3200 (71,22% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 1110
+- Classés comme CHATS  : 1228
+- Classés comme WILD   : 862
+---------------------------------------------------
+
+
+
+eta 0.001f, mse 0.05, 600 itérations:
+
+=== VÉRIFICATION SUR LES DONNÉES D'ENTRAÎNEMENT (Train) ===
+RÉSULTAT GLOBAL : 9986/10000 (99,86% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 3227
+- Classés comme CHATS  : 3486
+- Classés comme WILD   : 3287
+---------------------------------------------------
+
+=== VRAI TEST SUR DONNÉES INCONNUES (Test) ===
+RÉSULTAT GLOBAL : 2290/3200 (71,56% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 1034
+- Classés comme CHATS  : 1256
+- Classés comme WILD   : 910
+---------------------------------------------------
+
+
+eta 0.0001, mse 0.001, 2000 itérations:
+
+=== VÉRIFICATION SUR LES DONNÉES D'ENTRAÎNEMENT (Train) ===
+RÉSULTAT GLOBAL : 9900/10000 (99,00% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 3240
+- Classés comme CHATS  : 3451
+- Classés comme WILD   : 3309
+---------------------------------------------------
+
+=== VRAI TEST SUR DONNÉES INCONNUES (Test) ===
+RÉSULTAT GLOBAL : 2261/3200 (70,66% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 1058
+- Classés comme CHATS  : 1161
+- Classés comme WILD   : 981
+---------------------------------------------------
+
+
+
+200 itérations, FFT
+
+
+=== VÉRIFICATION SUR LES DONNÉES D'ENTRAÎNEMENT (Train) ===
+RÉSULTAT GLOBAL : 6003/10000 (60,03% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 4320
+- Classés comme CHATS  : 2714
+- Classés comme WILD   : 2966
+---------------------------------------------------
+
+=== VRAI TEST SUR DONNÉES INCONNUES (Test) ===
+RÉSULTAT GLOBAL : 1830/3200 (57,19% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 1349
+- Classés comme CHATS  : 921
+- Classés comme WILD   : 930
+---------------------------------------------------
+
+
+
+600 itérations, FFT :
+
+=== VÉRIFICATION SUR LES DONNÉES D'ENTRAÎNEMENT (Train) ===
+RÉSULTAT GLOBAL : 7116/10000 (71,16% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 3463
+- Classés comme CHATS  : 3225
+- Classés comme WILD   : 3312
+---------------------------------------------------
+
+=== VRAI TEST SUR DONNÉES INCONNUES (Test) ===
+RÉSULTAT GLOBAL : 2019/3200 (63,09% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 1123
+- Classés comme CHATS  : 966
+- Classés comme WILD   : 1111
+---------------------------------------------------
+
+
+600 itérations, HOG : 
+
+=== VÉRIFICATION SUR LES DONNÉES D'ENTRAÎNEMENT (Train) ===
+RÉSULTAT GLOBAL : 8955/10000 (89,55% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 3224
+- Classés comme CHATS  : 3504
+- Classés comme WILD   : 3272
+---------------------------------------------------
+
+=== VRAI TEST SUR DONNÉES INCONNUES (Test) ===
+RÉSULTAT GLOBAL : 2780/3200 (86,88% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 1018
+- Classés comme CHATS  : 1142
+- Classés comme WILD   : 1040
+---------------------------------------------------
+
+1200 itérations, HOG
+
+=== VÉRIFICATION SUR LES DONNÉES D'ENTRAÎNEMENT (Train) ===
+RÉSULTAT GLOBAL : 9073/10000 (90,73% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 3225
+- Classés comme CHATS  : 3509
+- Classés comme WILD   : 3266
+---------------------------------------------------
+
+=== VRAI TEST SUR DONNÉES INCONNUES (Test) ===
+RÉSULTAT GLOBAL : 2796/3200 (87,38% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 1011
+- Classés comme CHATS  : 1138
+- Classés comme WILD   : 1051
+---------------------------------------------------
+
+
+4x plus d'images, mirroir, et rotaion :
+
+=== VÉRIFICATION SUR LES DONNÉES D'ENTRAÎNEMENT (Train) ===
+RÉSULTAT GLOBAL : 9131/10000 (91,31% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 3193
+- Classés comme CHATS  : 3505
+- Classés comme WILD   : 3302
+---------------------------------------------------
+
+=== VRAI TEST SUR DONNÉES INCONNUES (Test) ===
+RÉSULTAT GLOBAL : 2880/3200 (90,00% de précision)
+Détail des décisions de l'IA :
+- Classés comme CHIENS : 1005
+- Classés comme CHATS  : 1144
+- Classés comme WILD   : 1051
+---------------------------------------------------
+
+

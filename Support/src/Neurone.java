@@ -94,6 +94,36 @@ public abstract class Neurone implements iNeurone
 		while (mse > MSElimite);
 	}
 
+	// Surcharge de l'apprentissage avec garde-fou contre la boucle infinie.
+	// Identique à la méthode ci-dessus, mais la boucle s'arrête AUSSI dès que
+	// le nombre maximal d'itérations iterMax est atteint.
+	// - Pour un nombre d'itérations FIXE : passer MSElimite = 0f (seuil jamais atteint).
+	// - Pour "iterMax au maximum, mais arrêt anticipé si convergence" : passer un MSElimite normal.
+	public void apprentissage(final float[][] entrees, final float[] resultats,
+	                          final float MSElimite, final int iterMax)
+	{
+		double mse = 0.;
+		int iter = 0;
+		do
+		{
+			mse = 0.;
+			for (int i = 0; i < entrees.length; ++i)
+			{
+				final float[] entree = entrees[i];
+				metAJour(entree);
+				final float delta = resultats[i]-sortie();
+				mse += delta * delta;
+				for (int j = 0; j < entree.length; ++j)
+					synapses()[j] += entree[j]*eta*delta;
+				fixeBiais(biais()+eta*delta);
+			}
+			mse /= entrees.length;
+			System.out.printf("Itération %d, mse:  %.6f\n", iter, mse);
+			iter += 1;
+		}
+		while (mse > MSElimite && iter < iterMax);   // double condition d'arrêt
+	}
+
 	public void sauvegarde(String chemin) // optionel
 	{
 		try
