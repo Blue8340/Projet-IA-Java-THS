@@ -2,15 +2,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.io.File;
+import java.io.FileReader;
+import java.io.BufferedReader;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.basic.BasicComboBoxUI;
-import javax.swing.plaf.basic.BasicComboPopup;
-import javax.swing.plaf.basic.ComboPopup;
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
-import java.awt.geom.RoundRectangle2D;
 
 public class MainProjet {
 
@@ -30,13 +29,13 @@ public class MainProjet {
     private static boolean activeNorm = true;
 
     // --- COULEURS DU THÈME GRAPHIQUE ---
-    private static final Color BG_DARK = new Color(34, 56, 43);      // Fond principal
-    private static final Color BG_PANEL = new Color(55, 80, 60);     // Arrière-plan des panneaux
-    private static final Color FG_TEXT = new Color(240, 235, 225);   // Texte principal
-    private static final Color ACCENT_BTN = new Color(210, 175, 130);// Accents et boutons d'action
-    private static final Color TXT_BTN = new Color(60, 40, 20);      // Texte sur les boutons d'action
-    private static final Color NEON_GREEN = new Color(150, 200, 120);// Succès / Validation
-    private static final Color NEON_RED = new Color(200, 100, 80);   // Erreur / Avertissement
+    private static final Color BG_DARK = new Color(34, 56, 43);      
+    private static final Color BG_PANEL = new Color(55, 80, 60);     
+    private static final Color FG_TEXT = new Color(240, 235, 225);   
+    private static final Color ACCENT_BTN = new Color(210, 175, 130);
+    private static final Color TXT_BTN = new Color(60, 40, 20);      
+    private static final Color NEON_GREEN = new Color(150, 200, 120);
+    private static final Color NEON_RED = new Color(200, 100, 80);   
 
     static class DonneeEntrainement {
         float[] pixels;
@@ -115,7 +114,6 @@ public class MainProjet {
 
                     dataset.add(new DonneeEntrainement(featuresImage, vraiLabel));
 
-                    // Augmentation de données (Symétrie horizontale)
                     if (miroir) {
                         float[] featuresMiroir = new float[tailleReference];
                         int channels = (modeGrisDentre && !modeCouleur.equals("FFT 2D")) ? 1 : (modeCouleur.equals("FFT 2D") ? 1 : 3);
@@ -435,8 +433,8 @@ public class MainProjet {
 
         JFrame frame = new JFrame("IA Groupe 8 - Classification d'Images");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(950, 800);
-        frame.setMinimumSize(new Dimension(850, 600));
+        frame.setSize(1000, 850);
+        frame.setMinimumSize(new Dimension(900, 650));
         frame.getContentPane().setBackground(BG_DARK);
         frame.setLayout(new BorderLayout(20, 20));
 
@@ -473,7 +471,7 @@ public class MainProjet {
         row1.add(lblAct); row1.add(comboActivation);
         row1.add(checkShuffle); row1.add(checkNorm);
 
-        JPanel row2 = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 5));
+        JPanel row2 = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 5));
         row2.setOpaque(false);
         JCheckBox checkMiroir = new JCheckBox("Symétrie Miroir", false); styleComponent(checkMiroir); checkMiroir.setOpaque(false);
         
@@ -481,18 +479,30 @@ public class MainProjet {
         RoundedTextField textMse = new RoundedTextField("0.15", 4); styleComponent(textMse); 
         
         RoundedButton boutonEntrainer = new RoundedButton("Lancer l'apprentissage");
-        boutonEntrainer.setBackground(ACCENT_BTN);
-        boutonEntrainer.setForeground(TXT_BTN);
-        boutonEntrainer.setFont(new Font("SansSerif", Font.BOLD, 15));
-        boutonEntrainer.setPreferredSize(new Dimension(280, 40));
+        boutonEntrainer.setBackground(ACCENT_BTN); boutonEntrainer.setForeground(TXT_BTN);
+        boutonEntrainer.setFont(new Font("SansSerif", Font.BOLD, 14));
+        boutonEntrainer.setPreferredSize(new Dimension(200, 35));
 
-        JLabel lblEta = new JLabel("Taux (Eta):"); lblEta.setForeground(FG_TEXT);
-        JLabel lblMse = new JLabel("Marge d'erreur:"); lblMse.setForeground(FG_TEXT);
+        // AJOUT DES BOUTONS DE PERSISTANCE DANS L'UI
+        RoundedButton boutonSauvegarder = new RoundedButton("Sauvegarder Modèle");
+        boutonSauvegarder.setBackground(BG_PANEL.brighter()); boutonSauvegarder.setForeground(FG_TEXT);
+        boutonSauvegarder.setFont(new Font("SansSerif", Font.BOLD, 12));
+        boutonSauvegarder.setPreferredSize(new Dimension(160, 35));
+
+        RoundedButton boutonCharger = new RoundedButton("Charger Modèle");
+        boutonCharger.setBackground(BG_PANEL.brighter()); boutonCharger.setForeground(FG_TEXT);
+        boutonCharger.setFont(new Font("SansSerif", Font.BOLD, 12));
+        boutonCharger.setPreferredSize(new Dimension(140, 35));
+
+        JLabel lblEta = new JLabel("Eta:"); lblEta.setForeground(FG_TEXT);
+        JLabel lblMse = new JLabel("MSE:"); lblMse.setForeground(FG_TEXT);
 
         row2.add(checkMiroir);
         row2.add(lblEta); row2.add(textEta);
         row2.add(lblMse); row2.add(textMse);
         row2.add(boutonEntrainer);
+        row2.add(boutonSauvegarder);
+        row2.add(boutonCharger);
 
         panelConfig.add(row1); panelConfig.add(row2);
         panelCentre.add(panelConfig, BorderLayout.NORTH);
@@ -501,7 +511,7 @@ public class MainProjet {
         RoundedPanel panelImageFond = new RoundedPanel(new BorderLayout(), 30, BG_PANEL);
         panelImageFond.setBorder(new EmptyBorder(20, 20, 20, 20));
         
-        JLabel labelImage = new JLabel("Aucun modèle chargé. Veuillez lancer l'apprentissage.", JLabel.CENTER);
+        JLabel labelImage = new JLabel("Aucun modèle chargé. Veuillez lancer l'apprentissage ou charger un fichier de poids.", JLabel.CENTER);
         labelImage.setFont(new Font("SansSerif", Font.ITALIC, 16));
         labelImage.setForeground(FG_TEXT.darker());
         panelImageFond.add(labelImage, BorderLayout.CENTER);
@@ -545,7 +555,7 @@ public class MainProjet {
             }
         });
 
-        // ACTION : LANCER L'APPRENTISSAGE
+        // ACTION : ENTRAÎNEMENT
         boutonEntrainer.addActionListener(e -> {
             String couleurChoisie = (String) comboCouleur.getSelectedItem();
             String activationChoisie = (String) comboActivation.getSelectedItem();
@@ -559,11 +569,9 @@ public class MainProjet {
 
             labelResultat.setForeground(ACCENT_BTN);
             labelResultat.setText("> Optimisation des poids synaptiques en cours...");
-            boutonEntrainer.setEnabled(false);
-            boutonOuvrir.setEnabled(false); 
+            boutonEntrainer.setEnabled(false); boutonOuvrir.setEnabled(false); 
 
-            final float finalEta = eta;
-            final float finalMse = mse;
+            final float finalEta = eta; final float finalMse = mse;
 
             new Thread(() -> {
                 try {
@@ -577,10 +585,8 @@ public class MainProjet {
                     SwingUtilities.invokeLater(() -> {
                         labelResultat.setText("> " + messageResultat);
                         labelResultat.setForeground(NEON_GREEN);
-                        boutonOuvrir.setEnabled(true); 
-                        boutonEntrainer.setEnabled(true);
-                        imageOriginaleMemoire[0] = null;
-                        labelImage.setIcon(null);
+                        boutonOuvrir.setEnabled(true); boutonEntrainer.setEnabled(true);
+                        imageOriginaleMemoire[0] = null; labelImage.setIcon(null);
                         labelImage.setText("Modèle entraîné avec succès. En attente d'une image.");
                     });
                 } catch (Exception ex) {
@@ -593,7 +599,75 @@ public class MainProjet {
             }).start();
         });
 
-        // ACTION : INFÉRENCE SUR IMAGE
+        // ACTION : SAUVEGARDE DE L'ÉTAT SYNAPTIQUE
+        boutonSauvegarder.addActionListener(e -> {
+            if (expertChien == null || expertChat == null || expertWild == null) {
+                labelResultat.setText("> Erreur : Aucun modèle actif à sauvegarder.");
+                labelResultat.setForeground(NEON_RED);
+                return;
+            }
+            try {
+                expertChien.sauvegarde("modele_chien.txt");
+                expertChat.sauvegarde("modele_chat.txt");
+                expertWild.sauvegarde("modele_wild.txt");
+                labelResultat.setText("> Sauvegarde effectuée : [modele_chien/chat/wild.txt].");
+                labelResultat.setForeground(NEON_GREEN);
+            } catch (Exception ex) {
+                labelResultat.setText("> Échec de la sauvegarde des poids.");
+                labelResultat.setForeground(NEON_RED);
+            }
+        });
+
+        // ACTION : CHARGEMENT DE L'ÉTAT SYNAPTIQUE (DÉDUCTION DE TAILLE AUTOMATIQUE)
+        boutonCharger.addActionListener(e -> {
+            File fChien = new File("modele_chien.txt");
+            File fChat = new File("modele_chat.txt");
+            File fWild = new File("modele_wild.txt");
+
+            if (!fChien.exists() || !fChat.exists() || !fWild.exists()) {
+                labelResultat.setText("> Erreur : Fichiers de poids absents. Lancez un entraînement.");
+                labelResultat.setForeground(NEON_RED);
+                return;
+            }
+
+            try {
+                // Déduction dynamique de nbEntrees pour initialiser tailleReference si non définie
+                if (tailleReference == -1) {
+                    int lignes = 0;
+                    BufferedReader reader = new BufferedReader(new FileReader(fChien));
+                    while (reader.readLine() != null) lignes++;
+                    reader.close();
+                    tailleReference = lignes - 1; // Le biais est sur la dernière ligne
+                }
+
+                String activationChoisie = (String) comboActivation.getSelectedItem();
+                if (activationChoisie.equals("Sigmoïde")) {
+                    expertChien = new NeuroneSigmoide(tailleReference); expertChat = new NeuroneSigmoide(tailleReference); expertWild = new NeuroneSigmoide(tailleReference);
+                } else if (activationChoisie.equals("ReLU")) {
+                    expertChien = new NeuroneReLU(tailleReference); expertChat = new NeuroneReLU(tailleReference); expertWild = new NeuroneReLU(tailleReference);
+                } else {
+                    expertChien = new NeuroneHeavyside(tailleReference); expertChat = new NeuroneHeavyside(tailleReference); expertWild = new NeuroneHeavyside(tailleReference);
+                }
+
+                expertChien.chargement("modele_chien.txt");
+                expertChat.chargement("modele_chat.txt");
+                expertWild.chargement("modele_wild.txt");
+
+                activeCouleur = (String) comboCouleur.getSelectedItem();
+                activeNorm = checkNorm.isSelected();
+
+                labelResultat.setText("> Poids synaptiques chargés. Modèle prêt pour l'inférence.");
+                labelResultat.setForeground(NEON_GREEN);
+                boutonOuvrir.setEnabled(true);
+                labelImage.setIcon(null);
+                labelImage.setText("Modèle restauré. Prêt pour l'analyse.");
+            } catch (Exception ex) {
+                labelResultat.setText("> Échec lors du chargement des structures de persistance.");
+                labelResultat.setForeground(NEON_RED);
+            }
+        });
+
+        // ACTION : INFÉRENCE
         boutonOuvrir.addActionListener(e -> {
             JFileChooser selecteur = new JFileChooser("dataset_groupe_8/test/");
             if (selecteur.showOpenDialog(frame) == JFileChooser.APPROVE_OPTION) {
